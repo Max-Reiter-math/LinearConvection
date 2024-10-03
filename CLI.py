@@ -37,7 +37,7 @@ def get_args():
 
     parser.add_argument('-stab','--stabilization', type=str, metavar='', nargs='?', const="standard", default="standard", help='Choose the stabilization algorithm. For None, Isotropic Artificial Diffusion, Streamline Upwind, Streamline Upwind Petrov-Galerkin, Taylor-Galerkin or Discontinuous Galerkin Upwind choose: '+str(stab)) 
 
-    parser.add_argument('-a','--alpha', type=int, metavar='', nargs='?', const=1, default=1, help='Choose the stabilization parameter alpha. The options are 1.0, max(Pe,1), min(1, Pe/6). Choose with integer keys: '+str(alpha)) 
+    parser.add_argument('-a','--alpha', type=int, metavar='', nargs='?', const=0, default=0, help='Choose the stabilization parameter alpha. The options are 1.0, max(Pe,1), min(1, Pe/6). Choose with integer keys: '+str(alpha)) 
 
     parser.add_argument('-dt','--dt', type=float, metavar='',nargs='?', const=dt, default=dt,  help='Specifies resolution of time partition. Default is set to: ' + str(dt))
 
