@@ -44,19 +44,9 @@ __Convection__ The convection can be discretized in the following ways.
 
 $$
 \begin{aligned}
-a(v,c,w) &= 
-\int_{ \Omega } w \nabla \cdot (v c) \mathrm{d} x
-& \text{(standard formulation)}
-\\
-a(v,c,w) &= 
-\int_{ \Omega } w v\cdot \nabla c \mathrm{d} x
-+ \sigma \int_{ \Omega } c  w \nabla \cdot v \mathrm{d} x
-& \text{(after application of product rule, $\sigma = 1$ for conservative, $\sigma = 0$ for non-conservative form)}
-\\
-a(v,c,w) &= 
-- \int_{ \Omega } c  v\cdot \nabla w \mathrm{d} x
-+ \sum_{ F \in F^i_h } \int_F v\cdot \eta [ c  w] \mathrm{d} s
-& \text{(weak formulation, jump terms vanish for a continuous discrete function space)}
+a(v,c,w) &= \int_{ \Omega } w \nabla \cdot (v c) \mathrm{d} x & \text{(standard formulation)} \\\\\\
+a(v,c,w) &= \int_{ \Omega } w v\cdot \nabla c \mathrm{d} x + \sigma \int_{ \Omega } c  w \nabla \cdot v \mathrm{d} x & \text{(after application of product rule, $\sigma = 1$ for conservative, $\sigma = 0$ for non-conservative form)} \\\\\\
+a(v,c,w) &= - \int_{ \Omega } c  v\cdot \nabla w \mathrm{d} x + \sum_{ F \in F^i_h } \int_F v\cdot \eta [ c  w] \mathrm{d} s & \text{(weak formulation, jump terms vanish for a continuous discrete function space)}
 \end{aligned}
 $$
 
