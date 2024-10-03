@@ -7,6 +7,7 @@ __Description__ This project deals with the simulation of different stabilizatio
 </p>
 
 __Model__ We consider the Partial Differential Equation with a vector velocity field $v$ and a scalar mass density $c$ given by
+
 $$
 \partial_t c + (v \cdot \nabla ) c = 0.
 $$
@@ -21,7 +22,9 @@ __Velocity Field__ As velocity field we consider one swirl of a [Taylor-Green vo
 $$
 v(x,y) = (-\cos (\pi x +\pi/2) \sin (\pi y +\pi/2), \sin ( \pi x +\pi/2) \cos (\pi y +\pi/2))^T
 $$
+
 for $0 \leq x,y \leq 1$. This velocity field fulfills the so called slip boundary conditions
+
 $$
 v \cdot \eta_{\partial \Omega} = 0 .
 $$
@@ -29,13 +32,16 @@ $$
 
 __Discretization__ As discretization we use Finite Differences in time and Finite Elements in space. We consider the following abstract scheme for some discrete function Space $X_h$:
 For a given $c^n \in X_h$ we want to find $c^{n+1} \in X_h$ such that
+
 $$
 \frac{1}{\Delta t} (c^{n+1} - c^n, w) + a(v,c^{n+\theta},w) + b(v,c^{n+\theta},w) = 0
 $$
+
 for all $w\in X_h$ with $c^{n+\theta}= \theta c^{n+1} +  (1- \theta ) c^n$. Thereby $a$ is the discretization of the convection term and $b$ a potential stabilization term. 
 
 ## Discretization Schemes
 __Convection__ The convection can be discretized in the following ways. 
+
 $$
 \begin{aligned}
 a(v,c,w) &= 
@@ -53,7 +59,9 @@ a(v,c,w) &=
 & \text{(weak formulation, jump terms vanish for a continuous discrete function space)}
 \end{aligned}
 $$
+
 This is referred to in the command line interface by 
+
 > -cf "strng"
 
 > -cf "prod"
@@ -63,6 +71,7 @@ This is referred to in the command line interface by
 respectively.
 
 __Stabilization terms__ We add the following terms to the form.
+
 $$
 \begin{aligned}
 b(v,c,w) &=
@@ -82,7 +91,9 @@ b(v,c,w) &=
 & \text{(Upwinding for Discontinuous Galerkin)}
 \end{aligned}
 $$
+
 This is referred to in the command line interface by 
+
 > -stab "iad"
 
 > -stab "su"
@@ -97,6 +108,7 @@ In the case of a _Streamline Upwinding Petrov Galerkin_ called in the command li
 > -stab "supg"
 
 instead of adding a stabilization term, one simply replaces the test function $w$ by
+
 $$
 \bar{ w } = w + \tau ( v \cdot \nabla) w 
 .
