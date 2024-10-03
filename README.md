@@ -74,25 +74,10 @@ __Stabilization terms__ We add the following terms to the form.
 
 $$
 \begin{aligned}
-b(v,c,w) 
-&=
-\alpha \frac{|v| h}{2} (\nabla c , \nabla w)
-& \text{(Isotropic Artificial Diffusion)}
-\\\\\\
-b(v,c,w) 
-&=
-+ \alpha \frac{ h }{2 |v| } ((v \cdot \nabla) c , (v \cdot \nabla) w)
-&\text{(Streamline Upwinding)}
-\\\\\\
-b(v,c,w) 
-&=
-+ \alpha \frac{ h }{2 |v| } ((v \cdot \nabla) c , \nabla \cdot (v w))
-&\text{(Taylor-Galerkin)}
-\\\\\\
-b(v,c,w) 
-&=
-- \sum_{ F \in F^i_h } \int_F v \cdot \eta [ c  ] \langle w \rangle + \frac{ 1 }{ 2 } \sum_{ F \in F^i_h } \int_F | v \cdot \eta | [ c ] [ w ]
-&\text{(Upwinding for Discontinuous Galerkin)}
+b(v,c,w) &= \alpha \frac{|v| h}{2} (\nabla c , \nabla w) & \text{(Isotropic Artificial Diffusion)} \\\\\\
+b(v,c,w) &= \alpha \frac{ h }{2 |v| } ((v \cdot \nabla) c , (v \cdot \nabla) w) &\text{(Streamline Upwinding)} \\\\\\
+b(v,c,w) &= \alpha \frac{ h }{2 |v| } ((v \cdot \nabla) c , \nabla \cdot (v w)) &\text{(Taylor-Galerkin)} \\\\\\
+b(v,c,w) &= - \sum_{ F \in F^i_h } \int_F v \cdot \eta [ c  ] \langle w \rangle + \frac{ 1 }{ 2 } \sum_{ F \in F^i_h } \int_F | v \cdot \eta | [ c ] [ w ] &\text{(Upwinding for Discontinuous Galerkin)}
 \end{aligned}
 $$
 
