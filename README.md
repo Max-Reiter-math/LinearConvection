@@ -83,7 +83,7 @@ b(v,c,w)
 & 
 \text{(Isotropic Artificial Diffusion)}
 
-\\
+\\\\\\
 
 b(v,c,w) 
 &
@@ -92,7 +92,7 @@ b(v,c,w)
 &
 \text{(Streamline Upwinding)}
 
-\\
+\\\\\\
 
 b(v,c,w) 
 &
@@ -101,7 +101,7 @@ b(v,c,w)
 & 
 \text{(Taylor-Galerkin)}
 
-\\
+\\\\\\
 
 b(v,c,w) 
 &
